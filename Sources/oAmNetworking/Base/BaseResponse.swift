@@ -7,10 +7,10 @@
 
 import Foundation
 public struct BaseResponse<T: Codable>: Codable{
-    let data: T?
-    let total: Int
-    let skip: Int
-    let limit: Int
+    public let data: T?
+    public let total: Int
+    public let skip: Int
+    public let limit: Int
     
     enum CodingKeys:String, CodingKey{
         case data = "products"

@@ -7,19 +7,19 @@
 
 import Foundation
 
-protocol Endpoint{
+public protocol Endpoint{
     var path: String {get}
     var requestTimeOut: Int {get}
     var httpMethod: HTTPMethod {get}
 }
 
 extension Endpoint{
-    var requestTimeOut: Int{
+    public var requestTimeOut: Int{
         30
     }
 }
 
-protocol RequestEndpoint: Endpoint{
+public protocol RequestEndpoint: Endpoint{
     var parameters: Parameters? {get}
     func createRequest() -> NetworkRequest
 }

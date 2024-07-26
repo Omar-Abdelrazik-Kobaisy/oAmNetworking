@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RequestService{
+public protocol RequestService{
     var networkService: Requestable {get}
     var fetchEndpoint: RequestEndpoint? {get set}
 }

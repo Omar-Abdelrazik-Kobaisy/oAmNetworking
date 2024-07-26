@@ -17,7 +17,7 @@ public final class NetworkRequestable: Requestable{
     public var defaultRequestTimeOut: Float
     
     
-    init(){
+    public init(){
         defaultRequestTimeOut = 30.0
     }
     

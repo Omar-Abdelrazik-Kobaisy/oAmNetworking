@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol Endpoint{
+    var baseDomain: String {get}
     var path: String {get}
     var requestTimeOut: Int {get}
     var httpMethod: HTTPMethod {get}

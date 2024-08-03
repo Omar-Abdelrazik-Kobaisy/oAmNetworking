@@ -8,6 +8,7 @@
 import Foundation
 
 public struct NetworkRequest {
+    var baseDomain: String
     var path: String
     var parameters: Parameters?
     var headers: [String: String]
@@ -29,7 +30,7 @@ public struct NetworkRequest {
     var url: URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = BaseDomain.production.rawValue
+        components.host = baseDomain
         components.path = path
         components.queryItems = queryItems
         return components.url!
@@ -39,11 +40,13 @@ public struct NetworkRequest {
         url.absoluteString
     }
     
-    public init(path: String,
+    public init(baseDomain: String,
+                path: String,
                 parameters: Parameters? = nil,
                 requestBody: Any? = nil,
                 requestTimeOut: Float? = nil,
                 httpMethod: HTTPMethod) {
+        self.baseDomain = baseDomain
         self.path = path
         self.parameters = parameters
         self.headers = ["Content-Type": "application/json"]
